@@ -1,0 +1,489 @@
+Analysis & Synthesis report for main
+Sun Dec 13 15:23:02 2020
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: play:u4
+ 14. Parameter Settings for User Entity Instance: record:u5
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Dec 13 15:23:02 2020       ;
+; Quartus Prime Version       ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name               ; main                                        ;
+; Top-level Entity Name       ; main                                        ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 296                                         ;
+; Total pins                  ; 58                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                            ; main               ; main               ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path       ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; record.v                         ; yes             ; User Verilog HDL File  ; E:/My-program/eleOrgan/record.v    ;         ;
+; play.v                           ; yes             ; User Verilog HDL File  ; E:/My-program/eleOrgan/play.v      ;         ;
+; main.v                           ; yes             ; User Verilog HDL File  ; E:/My-program/eleOrgan/main.v      ;         ;
+; dotMatrix.v                      ; yes             ; User Verilog HDL File  ; E:/My-program/eleOrgan/dotMatrix.v ;         ;
+; debounce.v                       ; yes             ; User Verilog HDL File  ; E:/My-program/eleOrgan/debounce.v  ;         ;
+; tube.v                           ; yes             ; User Verilog HDL File  ; E:/My-program/eleOrgan/tube.v      ;         ;
+; freq.v                           ; yes             ; User Verilog HDL File  ; E:/My-program/eleOrgan/freq.v      ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 296   ;
+;     -- Combinational with no register       ; 114   ;
+;     -- Register only                        ; 53    ;
+;     -- Combinational with a register        ; 129   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 97    ;
+;     -- 3 input functions                    ; 51    ;
+;     -- 2 input functions                    ; 86    ;
+;     -- 1 input functions                    ; 8     ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 238   ;
+;     -- arithmetic mode                      ; 58    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 35    ;
+;     -- asynchronous clear/load mode         ; 167   ;
+;                                             ;       ;
+; Total registers                             ; 182   ;
+; Total logic cells in carry chains           ; 64    ;
+; I/O pins                                    ; 58    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 182   ;
+; Total fan-out                               ; 1247  ;
+; Average fan-out                             ; 3.52  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |main                      ; 296 (12)    ; 182          ; 0          ; 58   ; 0            ; 114 (4)      ; 53 (0)            ; 129 (8)          ; 64 (0)          ; 0 (0)      ; |main               ; main        ; work         ;
+;    |debounce:u3|           ; 46 (46)     ; 37           ; 0          ; 0    ; 0            ; 9 (9)        ; 21 (21)           ; 16 (16)          ; 15 (15)         ; 0 (0)      ; |main|debounce:u3   ; debounce    ; work         ;
+;    |dotMatrix:u1|          ; 41 (41)     ; 29           ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 29 (29)          ; 0 (0)           ; 0 (0)      ; |main|dotMatrix:u1  ; dotMatrix   ; work         ;
+;    |freq:u2|               ; 58 (58)     ; 14           ; 0          ; 0    ; 0            ; 44 (44)      ; 0 (0)             ; 14 (14)          ; 13 (13)         ; 0 (0)      ; |main|freq:u2       ; freq        ; work         ;
+;    |play:u4|               ; 46 (46)     ; 27           ; 0          ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 27 (27)          ; 22 (22)         ; 0 (0)      ; |main|play:u4       ; play        ; work         ;
+;    |record:u5|             ; 68 (68)     ; 49           ; 0          ; 0    ; 0            ; 19 (19)      ; 30 (30)           ; 19 (19)          ; 13 (13)         ; 0 (0)      ; |main|record:u5     ; record      ; work         ;
+;    |tube:u6|               ; 25 (25)     ; 18           ; 0          ; 0    ; 0            ; 7 (7)        ; 2 (2)             ; 16 (16)          ; 1 (1)           ; 0 (0)      ; |main|tube:u6       ; tube        ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; tube:u6|seg[7]                         ; Stuck at GND due to stuck port data_in ;
+; dotMatrix:u1|line_g[0]                 ; Stuck at GND due to stuck port data_in ;
+; dotMatrix:u1|row[7]                    ; Stuck at VCC due to stuck port data_in ;
+; dotMatrix:u1|line_r[0]                 ; Stuck at GND due to stuck port data_in ;
+; freq:u2|value[2]                       ; Merged with dotMatrix:u1|value[2]      ;
+; tube:u6|value[2]                       ; Merged with dotMatrix:u1|value[2]      ;
+; freq:u2|value[1]                       ; Merged with dotMatrix:u1|value[1]      ;
+; tube:u6|value[1]                       ; Merged with dotMatrix:u1|value[1]      ;
+; freq:u2|value[0]                       ; Merged with dotMatrix:u1|value[0]      ;
+; tube:u6|value[0]                       ; Merged with dotMatrix:u1|value[0]      ;
+; freq:u2|tone[1]                        ; Merged with dotMatrix:u1|tone[1]       ;
+; freq:u2|tone[0]                        ; Merged with dotMatrix:u1|tone[0]       ;
+; record:u5|cnt_pre[17]                  ; Merged with play:u4|cnt_pre[17]        ;
+; record:u5|cnt_pre[16]                  ; Merged with play:u4|cnt_pre[16]        ;
+; record:u5|cnt_pre[15]                  ; Merged with play:u4|cnt_pre[15]        ;
+; record:u5|cnt_pre[14]                  ; Merged with play:u4|cnt_pre[14]        ;
+; record:u5|cnt_pre[13]                  ; Merged with play:u4|cnt_pre[13]        ;
+; record:u5|cnt_pre[12]                  ; Merged with play:u4|cnt_pre[12]        ;
+; record:u5|cnt_pre[11]                  ; Merged with play:u4|cnt_pre[11]        ;
+; record:u5|cnt_pre[10]                  ; Merged with play:u4|cnt_pre[10]        ;
+; record:u5|cnt_pre[9]                   ; Merged with play:u4|cnt_pre[9]         ;
+; record:u5|cnt_pre[8]                   ; Merged with play:u4|cnt_pre[8]         ;
+; record:u5|cnt_pre[7]                   ; Merged with play:u4|cnt_pre[7]         ;
+; record:u5|cnt_pre[6]                   ; Merged with play:u4|cnt_pre[6]         ;
+; record:u5|cnt_pre[5]                   ; Merged with play:u4|cnt_pre[5]         ;
+; record:u5|cnt_pre[4]                   ; Merged with play:u4|cnt_pre[4]         ;
+; record:u5|cnt_pre[3]                   ; Merged with play:u4|cnt_pre[3]         ;
+; record:u5|cnt_pre[2]                   ; Merged with play:u4|cnt_pre[2]         ;
+; record:u5|cnt_pre[1]                   ; Merged with play:u4|cnt_pre[1]         ;
+; record:u5|cnt_pre[0]                   ; Merged with play:u4|cnt_pre[0]         ;
+; play:u4|cnt_pre[0]                     ; Merged with tube:u6|curtube[0]         ;
+; play:u4|cnt_pre[1]                     ; Merged with tube:u6|curtube[1]         ;
+; debounce:u3|key_p[0]                   ; Stuck at GND due to stuck port data_in ;
+; debounce:u3|p[0]                       ; Stuck at GND due to stuck port data_in ;
+; debounce:u3|p_pre[0]                   ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 35 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                           ;
++------------------+---------------------------+----------------------------------------+
+; Register name    ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------+---------------------------+----------------------------------------+
+; debounce:u3|p[0] ; Stuck at GND              ; debounce:u3|p_pre[0]                   ;
+;                  ; due to stuck port data_in ;                                        ;
++------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 182   ;
+; Number of registers using Synchronous Clear  ; 35    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 167   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 52    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; dotMatrix:u1|row[0]                    ; 1       ;
+; dotMatrix:u1|row[1]                    ; 1       ;
+; dotMatrix:u1|row[2]                    ; 1       ;
+; dotMatrix:u1|row[3]                    ; 1       ;
+; dotMatrix:u1|row[4]                    ; 1       ;
+; dotMatrix:u1|row[5]                    ; 1       ;
+; dotMatrix:u1|row[6]                    ; 1       ;
+; tube:u6|ds[0]                          ; 2       ;
+; dotMatrix:u1|curRow[0]                 ; 11      ;
+; Total number of inverted registers = 9 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|tone_play[1]         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main|play:u4|cur[5]       ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|record:u5|cur[6]     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main|freq:u2|uplimit      ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main|freq:u2|uplimit      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: play:u4 ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; N              ; 19    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: record:u5 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; N              ; 2     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Sun Dec 13 15:22:53 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file record.v
+    Info (12023): Found entity 1: record File: E:/My-program/eleOrgan/record.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file play.v
+    Info (12023): Found entity 1: play File: E:/My-program/eleOrgan/play.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main File: E:/My-program/eleOrgan/main.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dotmatrix.v
+    Info (12023): Found entity 1: dotMatrix File: E:/My-program/eleOrgan/dotMatrix.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file debounce.v
+    Info (12023): Found entity 1: debounce File: E:/My-program/eleOrgan/debounce.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tube.v
+    Info (12023): Found entity 1: tube File: E:/My-program/eleOrgan/tube.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file freq.v
+    Info (12023): Found entity 1: freq File: E:/My-program/eleOrgan/freq.v Line: 1
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "dotMatrix" for hierarchy "dotMatrix:u1" File: E:/My-program/eleOrgan/main.v Line: 74
+Warning (10230): Verilog HDL assignment warning at dotmatrix.v(33): truncated value with size 32 to match size of target (3) File: E:/My-program/eleOrgan/dotmatrix.v Line: 33
+Info (12128): Elaborating entity "freq" for hierarchy "freq:u2" File: E:/My-program/eleOrgan/main.v Line: 85
+Warning (10230): Verilog HDL assignment warning at freq.v(74): truncated value with size 32 to match size of target (13) File: E:/My-program/eleOrgan/freq.v Line: 74
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:u3" File: E:/My-program/eleOrgan/main.v Line: 92
+Warning (10230): Verilog HDL assignment warning at debounce.v(39): truncated value with size 32 to match size of target (15) File: E:/My-program/eleOrgan/debounce.v Line: 39
+Info (12128): Elaborating entity "play" for hierarchy "play:u4" File: E:/My-program/eleOrgan/main.v Line: 100
+Warning (10230): Verilog HDL assignment warning at play.v(72): truncated value with size 32 to match size of target (18) File: E:/My-program/eleOrgan/play.v Line: 72
+Warning (10230): Verilog HDL assignment warning at play.v(82): truncated value with size 32 to match size of target (6) File: E:/My-program/eleOrgan/play.v Line: 82
+Info (10041): Inferred latch for "music_tone[0][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[0][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[1][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[1][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[2][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[2][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[3][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[3][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[4][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[4][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[5][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[5][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[6][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[6][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[7][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[7][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[8][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[8][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[9][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[9][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[10][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[10][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[11][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[11][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[12][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[12][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[13][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[13][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[14][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[14][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[15][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[15][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[16][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[16][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[17][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[17][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[18][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_tone[18][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[0][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[0][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[0][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[1][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[1][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[1][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[2][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[2][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[2][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[3][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[3][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[3][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[4][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[4][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[4][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[5][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[5][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[5][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[6][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[6][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[6][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[7][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[7][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[7][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[8][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[8][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[8][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[9][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[9][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[9][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[10][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[10][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[10][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[11][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[11][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[11][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[12][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[12][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[12][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[13][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[13][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[13][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[14][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[14][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[14][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[15][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[15][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[15][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[16][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[16][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[16][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[17][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[17][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[17][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[18][0]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[18][1]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (10041): Inferred latch for "music_value[18][2]" at play.v(18) File: E:/My-program/eleOrgan/play.v Line: 18
+Info (12128): Elaborating entity "record" for hierarchy "record:u5" File: E:/My-program/eleOrgan/main.v Line: 112
+Warning (10036): Verilog HDL or VHDL warning at record.v(26): object "rise_key" assigned a value but never read File: E:/My-program/eleOrgan/record.v Line: 26
+Warning (10230): Verilog HDL assignment warning at record.v(76): truncated value with size 32 to match size of target (7) File: E:/My-program/eleOrgan/record.v Line: 76
+Warning (10230): Verilog HDL assignment warning at record.v(89): truncated value with size 32 to match size of target (18) File: E:/My-program/eleOrgan/record.v Line: 89
+Warning (10230): Verilog HDL assignment warning at record.v(98): truncated value with size 32 to match size of target (7) File: E:/My-program/eleOrgan/record.v Line: 98
+Info (12128): Elaborating entity "tube" for hierarchy "tube:u6" File: E:/My-program/eleOrgan/main.v Line: 123
+Warning (10230): Verilog HDL assignment warning at tube.v(37): truncated value with size 32 to match size of target (3) File: E:/My-program/eleOrgan/tube.v Line: 37
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "row[7]" is stuck at VCC File: E:/My-program/eleOrgan/main.v Line: 4
+    Warning (13410): Pin "line_g[0]" is stuck at GND File: E:/My-program/eleOrgan/main.v Line: 5
+    Warning (13410): Pin "line_r[0]" is stuck at GND File: E:/My-program/eleOrgan/main.v Line: 6
+    Warning (13410): Pin "seg[7]" is stuck at GND File: E:/My-program/eleOrgan/main.v Line: 8
+Info (18000): Registers with preset signals will power-up high File: E:/My-program/eleOrgan/dotmatrix.v Line: 88
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key[4]" File: E:/My-program/eleOrgan/main.v Line: 3
+    Warning (15610): No output dependent on input pin "key[7]" File: E:/My-program/eleOrgan/main.v Line: 3
+Info (21057): Implemented 354 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
+    Info (21059): Implemented 41 output pins
+    Info (21061): Implemented 296 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4713 megabytes
+    Info: Processing ended: Sun Dec 13 15:23:02 2020
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
+
+
